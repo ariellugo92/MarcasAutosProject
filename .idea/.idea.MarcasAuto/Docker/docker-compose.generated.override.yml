@@ -1,0 +1,23 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.7"
+services:
+  web_api:
+    build:
+      context: "/Users/ariellugo/Documents/MarcasAuto-master/MarcasAuto"
+      dockerfile: "Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/MarcasAuto.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "marcasauto:dev"
+    ports: []
+    volumes:
+    - "/Users/ariellugo/.microsoft/usersecrets:/home/app/.microsoft/usersecrets"
+    - "/Users/ariellugo/.nuget/packages:/home/app/.nuget/packages"
+    - "/Users/ariellugo/Documents/MarcasAuto-master/MarcasAuto:/app:rw"
+    - "/Users/ariellugo/Documents/MarcasAuto-master:/src:rw"
+    working_dir: "/app"
